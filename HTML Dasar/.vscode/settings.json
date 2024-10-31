@@ -1,0 +1,7 @@
+{
+    "discord.removeDetails": false,
+    "discord.removeLowerDetails": false,
+    "discord.removeRemoteRepository": false,
+    "discord.lowerDetailsIdling": "{empty}",
+    "discord.enabled": false
+}

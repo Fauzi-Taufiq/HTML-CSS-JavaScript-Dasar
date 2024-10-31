@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <style>
+        h1, h2, p, .title, #merah {
+            color: red;
+        }
+
+        /* combinator selector */
+        div .parent {
+            color: blue;
+        }
+
+        div > .anak {
+            color: blue;
+        }
+        /* adik */
+        div + .adik {
+            color: blue;
+        }
+        /* saudara */
+        div ~ .saudara {
+            color: blue;
+        }
+
+        /* attribut selector */
+        a[target="_blank"] { /*tanpa tag bisa*/
+            color: red;
+        }
+
+        p[title~="1belajar"] {
+            color: aqua;
+        }
+
+        p[title|="2belajar"] {
+            color: aqua;
+        }
+
+        p[title^="3belajar"] {
+            color: aqua;
+        }
+
+        /* 
+        ~= 'seleksi kata'
+        |= 'belajar atau belajar-'
+        ^= 'dimulai belajar'
+        $= 'diakhiri belajar'
+        *= 'semua yang mengandung belajar'
+        */
+    </style>
+</head>
+<body>
+    <h1>Ini title</h1>
+    <h2>Ini sub title</h2>
+    <p>Ini artikel</p>
+
+    <h3 class="title">Merah</h3>
+    <span id="merah">Merah</span><br>
+
+    <!-- Combinator Selector -->
+    <div>
+        <article>
+            <p class="parent">Ini dipilih</p>
+        </article>
+        <p class="parent">Ini dipilih</p>
+    </div>
+    <p class="parent">Ini tidak dipilih</p><br>
+
+    <!-- child selector -->
+    <div>
+        <article>
+            <p class="anak">Ini tidak dipilih</p>
+        </article>
+        <p class="anak">Ini dipilih</p>
+    </div>
+    <p class="anak">Ini tidak dipilih</p><br>
+
+    <!-- sibling selector -->
+    <div>
+        <article>
+            <p class="adik">Ini tidak dipilih</p>
+        </article>
+        <p class="adik">Ini tidak dipilih</p>
+    </div>
+    <p class="adik">Ini dipilih</p>
+    <p class="adik">Ini tidak dipilih</p><br>
+
+    <!-- saudara -->
+    <div>
+        <article>
+            <p class="saudara">Ini tidak dipilih</p>
+        </article>
+        <p class="saudara">Ini tidak dipilih</p>
+    </div>
+    <p class="saudara">Ini dipilih</p>
+    <p class="saudara">Ini dipilih</p>
+
+    <!-- attribut selector --> <br>
+    <a href="" target="_blank" rel="noopener noreferrer">Contoh 1</a>
+    <a href=""  rel="noopener noreferrer">Contoh 1</a>
+    <a href="" target="" rel="noopener noreferrer">Contoh 1</a>
+    <a href=""  rel="noopener noreferrer">Contoh 1</a>
+
+    <p title="1belajar pemrograman">Ini dipilih</p>
+    <p title="1belajarpemrograman">Ini tidak dipilih</p><br>
+
+    <p title="2belajar pemrograman">Ini tidak dipilih</p>
+    <p title="2belajar-pemrograman">Ini dipilih</p><br>
+
+    <p title="3belajar pemrograman">Ini dipilih</p>
+    <p title="3belajar-pemrograman">Ini dipilih</p>
+    <p title="pemrograman 3belajar">Ini tidak dipilih</p>
+    <br>
+</body>
+</html>
